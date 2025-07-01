@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Age Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Advanced Age Calculator</h1>
+            <p>Calculate your exact age with precision</p>
+        </header>
+        <main>
+            <div class="calculator-section">
+                <div class="input-section">
+                    <h2>Enter Your Birth Date</h2>
+                    <div class="date-input-group">
+                        <div class="input-field">
+                            <label for="birth-date">Date of Birth</label>
+                            <input type="date" id="birth-date" required>
+                        </div>
+                        <div class="input-field">
+                            <label for="birth-time">Time of Birth (Optional)</label>
+                            <input type="time" id="birth-time">
+                        </div>
+                    </div>
+                    <div class="calculation-options">
+                        <h3>Calculation Options</h3>
+                        <div class="options-grid">
+                            <label class="option-item">
+                                <input type="checkbox" id="include-time" checked>
+                                <span>Include time precision</span>
+                            </label>
+                            <label class="option-item">
+                                <input type="checkbox" id="show-detailed" checked>
+                                <span>Show detailed breakdown</span>
+                            </label>
+                            <label class="option-item">
+                                <input type="checkbox" id="show-milestones" checked>
+                                <span>Show age milestones</span>
+                            </label>
+                            <label class="option-item">
+                                <input type="checkbox" id="auto-update" checked>
+                                <span>Auto-update every second</span>
+                            </label>
+                        </div>
+                    </div>
+                    <button id="calculate-btn" class="calculate-button">Calculate Age</button>
+                </div>
+                <div id="results-section" class="results-section" style="display: none;">
+                    <div class="age-display">
+                        <h2>Your Age</h2>
+                        <div class="primary-age">
+                            <div class="age-number" id="primary-age">0</div>
+                            <div class="age-label">Years Old</div>
+                        </div>
+                    </div>
+                    <div class="detailed-breakdown" id="detailed-breakdown">
+                        <h3>Detailed Breakdown</h3>
+                        <div class="breakdown-grid">
+                            <div class="breakdown-item">
+                                <span class="breakdown-value" id="years-value">0</span>
+                                <span class="breakdown-label">Years</span>
+                            </div>
+                            <div class="breakdown-item">
+                                <span class="breakdown-value" id="months-value">0</span>
+                                <span class="breakdown-label">Months</span>
+                            </div>
+                            <div class="breakdown-item">
+                                <span class="breakdown-value" id="days-value">0</span>
+                                <span class="breakdown-label">Days</span>
+                            </div>
+                            <div class="breakdown-item">
+                                <span class="breakdown-value" id="hours-value">0</span>
+                                <span class="breakdown-label">Hours</span>
+                            </div>
+                            <div class="breakdown-item">
+                                <span class="breakdown-value" id="minutes-value">0</span>
+                                <span class="breakdown-label">Minutes</span>
+                            </div>
+                            <div class="breakdown-item">
+                                <span class="breakdown-value" id="seconds-value">0</span>
+                                <span class="breakdown-label">Seconds</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="alternative-formats" id="alternative-formats">
+                        <h3>Alternative Formats</h3>
+                        <div class="formats-grid">
+                            <div class="format-item">
+                                <span class="format-label">Total Days:</span>
+                                <span class="format-value" id="total-days">0</span>
+                            </div>
+                            <div class="format-item">
+                                <span class="format-label">Total Hours:</span>
+                                <span class="format-value" id="total-hours">0</span>
+                            </div>
+                            <div class="format-item">
+                                <span class="format-label">Total Minutes:</span>
+                                <span class="format-value" id="total-minutes">0</span>
+                            </div>
+                            <div class="format-item">
+                                <span class="format-label">Total Seconds:</span>
+                                <span class="format-value" id="total-seconds">0</span>
+                            </div>
+                            <div class="format-item">
+                                <span class="format-label">Total Weeks:</span>
+                                <span class="format-value" id="total-weeks">0</span>
+                            </div>
+                            <div class="format-item">
+                                <span class="format-label">Total Months:</span>
+                                <span class="format-value" id="total-months">0</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="milestones-section" id="milestones-section">
+                        <h3>Age Milestones</h3>
+                        <div class="milestones-container" id="milestones-container">
+                        </div>
+                    </div>
+                    <div class="next-birthday" id="next-birthday-section">
+                        <h3>Next Birthday</h3>
+                        <div class="birthday-info">
+                            <div class="birthday-countdown">
+                                <span id="days-until-birthday">0</span> days until your next birthday
+                            </div>
+                            <div class="birthday-date">
+                                <span id="next-birthday-date">January 1, 2024</span>
+                            </div>
+                            <div class="birthday-day">
+                                Falls on a <span id="birthday-weekday">Monday</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button id="recalculate-btn" class="recalculate-button">Calculate Again</button>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <p>Developed by Saket Kumar Sinha</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
